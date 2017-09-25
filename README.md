@@ -15,6 +15,7 @@ A technique named `Data Binding` is used.
 A simple app which shows the most stared Github repositories written by Swift.
 
 #### Libraries
-* [Alamofire]() to perform HTTP requests under `Model` layer.
-* [RxSwift + RxCocoa] to do "data binding" job which binds `ViewModel` and `View`
-* [SwiftyJSON] to parse API response data
+* [Alamofire](https://github.com/Alamofire/Alamofire) to perform HTTP requests under `Model` layer.
+* [RxSwift + RxCocoa](https://github.com/ReactiveX/RxSwift) to do "data binding" job which binds `ViewModel` and `View`
+* [SwiftyJSON](https://github.com/SwiftyJSON/SwiftyJSON) to parse API response data
+* [Realm](https://github.com/realm/realm-cocoa) to persit local data

@@ -10,4 +10,5 @@ target 'mvvm-ios' do
   pod 'SwiftyJSON'
   pod 'RxSwift'
   pod 'RxCocoa'
+  pod 'RealmSwift'
 end

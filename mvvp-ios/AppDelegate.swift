@@ -3,7 +3,7 @@
 //  mvvp-ios
 //
 //  Created by Quang Nguyen on 9/20/17.
-//  Copyright © 2017 Quang Nguyen. All rights reserved.
+//  Copyright © 2017 Aromajoin. All rights reserved.
 //
 
 import UIKit

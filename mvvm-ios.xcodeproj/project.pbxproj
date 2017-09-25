@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		0EFA6864BA45F7A4601F765F /* Pods_mvvm_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F638219E7A6EE4AFD08CD46 /* Pods_mvvm_ios.framework */; };
+		CE3B9BEC1F78CDC300D83FCB /* RealmHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3B9BEB1F78CDC300D83FCB /* RealmHelper.swift */; };
+		CE3B9BEE1F78D38600D83FCB /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3B9BED1F78D38600D83FCB /* DataManager.swift */; };
+		CE3B9BF01F78DE3300D83FCB /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = CE3B9BEF1F78DE3300D83FCB /* LICENSE */; };
 		CE6F5FF21F74E54800784E15 /* ReposViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6F5FF11F74E54800784E15 /* ReposViewModel.swift */; };
 		CE6F5FF41F74FC6E00784E15 /* TODO in Resources */ = {isa = PBXBuildFile; fileRef = CE6F5FF31F74FC6E00784E15 /* TODO */; };
 		CEF312971F7343FF00CC7206 /* GithubAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF312961F7343FF00CC7206 /* GithubAPIClient.swift */; };
@@ -22,6 +25,9 @@
 
 /* Begin PBXFileReference section */
 		2F638219E7A6EE4AFD08CD46 /* Pods_mvvm_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mvvm_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE3B9BEB1F78CDC300D83FCB /* RealmHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmHelper.swift; sourceTree = "<group>"; };
+		CE3B9BED1F78D38600D83FCB /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		CE3B9BEF1F78DE3300D83FCB /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		CE6F5FF11F74E54800784E15 /* ReposViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReposViewModel.swift; sourceTree = "<group>"; };
 		CE6F5FF31F74FC6E00784E15 /* TODO */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TODO; sourceTree = "<group>"; };
 		CEF312961F7343FF00CC7206 /* GithubAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GithubAPIClient.swift; sourceTree = "<group>"; };
@@ -63,6 +69,8 @@
 			children = (
 				CEF3129A1F737B1B00CC7206 /* Repo.swift */,
 				CEF312961F7343FF00CC7206 /* GithubAPIClient.swift */,
+				CE3B9BEB1F78CDC300D83FCB /* RealmHelper.swift */,
+				CE3B9BED1F78D38600D83FCB /* DataManager.swift */,
 			);
 			name = data;
 			sourceTree = "<group>";
@@ -80,6 +88,7 @@
 		CEF9FE971F72B09400D629AB = {
 			isa = PBXGroup;
 			children = (
+				CE3B9BEF1F78DE3300D83FCB /* LICENSE */,
 				CE6F5FF31F74FC6E00784E15 /* TODO */,
 				CEF9FEB51F72B10E00D629AB /* README.md */,
 				CEF9FEA21F72B09400D629AB /* mvvm-ios */,
@@ -151,7 +160,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
 				LastUpgradeCheck = 0830;
-				ORGANIZATIONNAME = "Quang Nguyen";
+				ORGANIZATIONNAME = Aromajoin;
 				TargetAttributes = {
 					CEF9FE9F1F72B09400D629AB = {
 						CreatedOnToolsVersion = 8.3.1;
@@ -187,6 +196,7 @@
 				CEF9FEAB1F72B09400D629AB /* Assets.xcassets in Resources */,
 				CE6F5FF41F74FC6E00784E15 /* TODO in Resources */,
 				CEF9FEA91F72B09400D629AB /* Main.storyboard in Resources */,
+				CE3B9BF01F78DE3300D83FCB /* LICENSE in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -246,6 +256,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEF312971F7343FF00CC7206 /* GithubAPIClient.swift in Sources */,
+				CE3B9BEE1F78D38600D83FCB /* DataManager.swift in Sources */,
+				CE3B9BEC1F78CDC300D83FCB /* RealmHelper.swift in Sources */,
 				CEF9FEB61F72B10E00D629AB /* README.md in Sources */,
 				CE6F5FF21F74E54800784E15 /* ReposViewModel.swift in Sources */,
 				CEF3129B1F737B1B00CC7206 /* Repo.swift in Sources */,
@@ -379,7 +391,7 @@
 				DEVELOPMENT_TEAM = U6G6XZT3DJ;
 				INFOPLIST_FILE = "mvvp-ios/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.quangnguyen.mvvp-ios";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.aromajoin.mvvp-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -393,7 +405,7 @@
 				DEVELOPMENT_TEAM = U6G6XZT3DJ;
 				INFOPLIST_FILE = "mvvp-ios/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.quangnguyen.mvvp-ios";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.aromajoin.mvvp-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};

@@ -3,7 +3,7 @@
 //  mvvp-ios
 //
 //  Created by Quang Nguyen on 9/20/17.
-//  Copyright © 2017 Quang Nguyen. All rights reserved.
+//  Copyright © 2017 Aromajoin. All rights reserved.
 //
 
 import UIKit
@@ -28,15 +28,13 @@ class ReposViewController: UIViewController {
   
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
-    
-//    viewModel.loadTrendingRepos()
   }
   
   // Setup data binding
   private func setupDataBinding() {
     viewModel.requestCount
       .asObservable()
-      .map{"Request count: \($0)"}
+      .map{"Data load time: \($0)"}
       .bind(to: requestCountLabel.rx.text)
       .addDisposableTo(disposeBag)
     
@@ -46,13 +44,15 @@ class ReposViewController: UIViewController {
         self.repos.removeAll()
         self.tableView.reloadData()
 
-        self.viewModel.loadTrendingRepos()
+        // Load data from remote source
+        self.viewModel.loadTrendingRepos(online: true)
       })
       .disposed(by: disposeBag)
     
     viewModel.repos
+      .asObservable()
       .subscribe(onNext: {
-        self.repos = $0!
+        self.repos = $0
         self.tableView.reloadData()
       })
       .disposed(by: disposeBag)

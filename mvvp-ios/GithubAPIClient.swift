@@ -3,13 +3,13 @@
 //  mvvm-ios
 //
 //  Created by Quang Nguyen on 9/21/17.
-//  Copyright © 2017 Quang Nguyen. All rights reserved.
+//  Copyright © 2017 Aromajoin. All rights reserved.
 //
 
 import Foundation
 import Alamofire
 import SwiftyJSON
-public class GithubAPIClient {
+class GithubAPIClient {
   
   let API_HOST = "https://api.github.com/"
   let SEARCH_REPO_ENDPOINT = "search/repositories"
@@ -58,7 +58,9 @@ public class GithubAPIClient {
               return
             }
             
-            let repo = Repo(id: id, name: name)
+            let repo = Repo()
+            repo.id = id
+            repo.name = name
             repos.append(repo)
           }
           
