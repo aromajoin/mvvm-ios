@@ -11,6 +11,7 @@
 		CE3B9BEC1F78CDC300D83FCB /* RealmHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3B9BEB1F78CDC300D83FCB /* RealmHelper.swift */; };
 		CE3B9BEE1F78D38600D83FCB /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3B9BED1F78D38600D83FCB /* DataManager.swift */; };
 		CE3B9BF01F78DE3300D83FCB /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = CE3B9BEF1F78DE3300D83FCB /* LICENSE */; };
+		CE4A72851F7F5163007EE558 /* mvvm_ios_tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4A72841F7F5163007EE558 /* mvvm_ios_tests.swift */; };
 		CE6F5FF21F74E54800784E15 /* ReposViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6F5FF11F74E54800784E15 /* ReposViewModel.swift */; };
 		CE6F5FF41F74FC6E00784E15 /* TODO in Resources */ = {isa = PBXBuildFile; fileRef = CE6F5FF31F74FC6E00784E15 /* TODO */; };
 		CEF312971F7343FF00CC7206 /* GithubAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF312961F7343FF00CC7206 /* GithubAPIClient.swift */; };
@@ -23,11 +24,24 @@
 		CEF9FEB61F72B10E00D629AB /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = CEF9FEB51F72B10E00D629AB /* README.md */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		CE4A72871F7F5163007EE558 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CEF9FE981F72B09400D629AB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CEF9FE9F1F72B09400D629AB;
+			remoteInfo = "mvvm-ios";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		2F638219E7A6EE4AFD08CD46 /* Pods_mvvm_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mvvm_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE3B9BEB1F78CDC300D83FCB /* RealmHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmHelper.swift; sourceTree = "<group>"; };
 		CE3B9BED1F78D38600D83FCB /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		CE3B9BEF1F78DE3300D83FCB /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		CE4A72821F7F5163007EE558 /* mvvm-ios-tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "mvvm-ios-tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE4A72841F7F5163007EE558 /* mvvm_ios_tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mvvm_ios_tests.swift; sourceTree = "<group>"; };
+		CE4A72861F7F5163007EE558 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE6F5FF11F74E54800784E15 /* ReposViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReposViewModel.swift; sourceTree = "<group>"; };
 		CE6F5FF31F74FC6E00784E15 /* TODO */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TODO; sourceTree = "<group>"; };
 		CEF312961F7343FF00CC7206 /* GithubAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GithubAPIClient.swift; sourceTree = "<group>"; };
@@ -45,6 +59,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		CE4A727F1F7F5163007EE558 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CEF9FE9D1F72B09400D629AB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -62,6 +83,15 @@
 				2F638219E7A6EE4AFD08CD46 /* Pods_mvvm_ios.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CE4A72831F7F5163007EE558 /* mvvm-ios-tests */ = {
+			isa = PBXGroup;
+			children = (
+				CE4A72841F7F5163007EE558 /* mvvm_ios_tests.swift */,
+				CE4A72861F7F5163007EE558 /* Info.plist */,
+			);
+			path = "mvvm-ios-tests";
 			sourceTree = "<group>";
 		};
 		CEF3129C1F73805700CC7206 /* data */ = {
@@ -92,6 +122,7 @@
 				CE6F5FF31F74FC6E00784E15 /* TODO */,
 				CEF9FEB51F72B10E00D629AB /* README.md */,
 				CEF9FEA21F72B09400D629AB /* mvvm-ios */,
+				CE4A72831F7F5163007EE558 /* mvvm-ios-tests */,
 				CEF9FEA11F72B09400D629AB /* Products */,
 				ED48B48C43E98F32EF213C40 /* Pods */,
 				B1A41D0AB6E470B8B83C2E4E /* Frameworks */,
@@ -102,6 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				CEF9FEA01F72B09400D629AB /* mvvm-ios.app */,
+				CE4A72821F7F5163007EE558 /* mvvm-ios-tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -132,6 +164,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		CE4A72811F7F5163007EE558 /* mvvm-ios-tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CE4A728B1F7F5163007EE558 /* Build configuration list for PBXNativeTarget "mvvm-ios-tests" */;
+			buildPhases = (
+				CE4A727E1F7F5163007EE558 /* Sources */,
+				CE4A727F1F7F5163007EE558 /* Frameworks */,
+				CE4A72801F7F5163007EE558 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CE4A72881F7F5163007EE558 /* PBXTargetDependency */,
+			);
+			name = "mvvm-ios-tests";
+			productName = "mvvm-ios-tests";
+			productReference = CE4A72821F7F5163007EE558 /* mvvm-ios-tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		CEF9FE9F1F72B09400D629AB /* mvvm-ios */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = CEF9FEB21F72B09400D629AB /* Build configuration list for PBXNativeTarget "mvvm-ios" */;
@@ -162,6 +212,12 @@
 				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = Aromajoin;
 				TargetAttributes = {
+					CE4A72811F7F5163007EE558 = {
+						CreatedOnToolsVersion = 8.3.1;
+						DevelopmentTeam = U6G6XZT3DJ;
+						ProvisioningStyle = Automatic;
+						TestTargetID = CEF9FE9F1F72B09400D629AB;
+					};
 					CEF9FE9F1F72B09400D629AB = {
 						CreatedOnToolsVersion = 8.3.1;
 						DevelopmentTeam = U6G6XZT3DJ;
@@ -183,11 +239,19 @@
 			projectRoot = "";
 			targets = (
 				CEF9FE9F1F72B09400D629AB /* mvvm-ios */,
+				CE4A72811F7F5163007EE558 /* mvvm-ios-tests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		CE4A72801F7F5163007EE558 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CEF9FE9E1F72B09400D629AB /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -251,6 +315,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		CE4A727E1F7F5163007EE558 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE4A72851F7F5163007EE558 /* mvvm_ios_tests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CEF9FE9C1F72B09400D629AB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -267,6 +339,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CE4A72881F7F5163007EE558 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CEF9FE9F1F72B09400D629AB /* mvvm-ios */;
+			targetProxy = CE4A72871F7F5163007EE558 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		CEF9FEA71F72B09400D629AB /* Main.storyboard */ = {
@@ -288,6 +368,34 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		CE4A72891F7F5163007EE558 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = U6G6XZT3DJ;
+				INFOPLIST_FILE = "mvvm-ios-tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.quangnguyen.mvvm-ios-tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/mvvm-ios.app/mvvm-ios";
+			};
+			name = Debug;
+		};
+		CE4A728A1F7F5163007EE558 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = U6G6XZT3DJ;
+				INFOPLIST_FILE = "mvvm-ios-tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.quangnguyen.mvvm-ios-tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/mvvm-ios.app/mvvm-ios";
+			};
+			name = Release;
+		};
 		CEF9FEB01F72B09400D629AB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -414,6 +522,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		CE4A728B1F7F5163007EE558 /* Build configuration list for PBXNativeTarget "mvvm-ios-tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE4A72891F7F5163007EE558 /* Debug */,
+				CE4A728A1F7F5163007EE558 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		CEF9FE9B1F72B09400D629AB /* Build configuration list for PBXProject "mvvm-ios" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
