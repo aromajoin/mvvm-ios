@@ -8,16 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		0EFA6864BA45F7A4601F765F /* Pods_mvvm_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F638219E7A6EE4AFD08CD46 /* Pods_mvvm_ios.framework */; };
-		CE3B9BEC1F78CDC300D83FCB /* RealmHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3B9BEB1F78CDC300D83FCB /* RealmHelper.swift */; };
-		CE3B9BEE1F78D38600D83FCB /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3B9BED1F78D38600D83FCB /* DataManager.swift */; };
 		CE3B9BF01F78DE3300D83FCB /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = CE3B9BEF1F78DE3300D83FCB /* LICENSE */; };
 		CE4A72851F7F5163007EE558 /* mvvm_ios_tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4A72841F7F5163007EE558 /* mvvm_ios_tests.swift */; };
-		CE6F5FF21F74E54800784E15 /* ReposViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6F5FF11F74E54800784E15 /* ReposViewModel.swift */; };
+		CE4A72951F7F53F5007EE558 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4A72901F7F53F5007EE558 /* DataManager.swift */; };
+		CE4A72961F7F53F5007EE558 /* GithubAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4A72911F7F53F5007EE558 /* GithubAPIClient.swift */; };
+		CE4A72971F7F53F5007EE558 /* JSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4A72921F7F53F5007EE558 /* JSONParser.swift */; };
+		CE4A72981F7F53F5007EE558 /* RealmHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4A72931F7F53F5007EE558 /* RealmHelper.swift */; };
+		CE4A72991F7F53F5007EE558 /* Repo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4A72941F7F53F5007EE558 /* Repo.swift */; };
+		CE4A729C1F7F541D007EE558 /* ReposViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4A729A1F7F541D007EE558 /* ReposViewController.swift */; };
+		CE4A729D1F7F541D007EE558 /* ReposViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4A729B1F7F541D007EE558 /* ReposViewModel.swift */; };
 		CE6F5FF41F74FC6E00784E15 /* TODO in Resources */ = {isa = PBXBuildFile; fileRef = CE6F5FF31F74FC6E00784E15 /* TODO */; };
-		CEF312971F7343FF00CC7206 /* GithubAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF312961F7343FF00CC7206 /* GithubAPIClient.swift */; };
-		CEF3129B1F737B1B00CC7206 /* Repo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF3129A1F737B1B00CC7206 /* Repo.swift */; };
 		CEF9FEA41F72B09400D629AB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF9FEA31F72B09400D629AB /* AppDelegate.swift */; };
-		CEF9FEA61F72B09400D629AB /* ReposViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF9FEA51F72B09400D629AB /* ReposViewController.swift */; };
 		CEF9FEA91F72B09400D629AB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEF9FEA71F72B09400D629AB /* Main.storyboard */; };
 		CEF9FEAB1F72B09400D629AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEF9FEAA1F72B09400D629AB /* Assets.xcassets */; };
 		CEF9FEAE1F72B09400D629AB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEF9FEAC1F72B09400D629AB /* LaunchScreen.storyboard */; };
@@ -36,19 +37,20 @@
 
 /* Begin PBXFileReference section */
 		2F638219E7A6EE4AFD08CD46 /* Pods_mvvm_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mvvm_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		CE3B9BEB1F78CDC300D83FCB /* RealmHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmHelper.swift; sourceTree = "<group>"; };
-		CE3B9BED1F78D38600D83FCB /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		CE3B9BEF1F78DE3300D83FCB /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		CE4A72821F7F5163007EE558 /* mvvm-ios-tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "mvvm-ios-tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE4A72841F7F5163007EE558 /* mvvm_ios_tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mvvm_ios_tests.swift; sourceTree = "<group>"; };
 		CE4A72861F7F5163007EE558 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CE6F5FF11F74E54800784E15 /* ReposViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReposViewModel.swift; sourceTree = "<group>"; };
+		CE4A72901F7F53F5007EE558 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataManager.swift; path = data/DataManager.swift; sourceTree = "<group>"; };
+		CE4A72911F7F53F5007EE558 /* GithubAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GithubAPIClient.swift; path = data/GithubAPIClient.swift; sourceTree = "<group>"; };
+		CE4A72921F7F53F5007EE558 /* JSONParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JSONParser.swift; path = data/JSONParser.swift; sourceTree = "<group>"; };
+		CE4A72931F7F53F5007EE558 /* RealmHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RealmHelper.swift; path = data/RealmHelper.swift; sourceTree = "<group>"; };
+		CE4A72941F7F53F5007EE558 /* Repo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Repo.swift; path = data/Repo.swift; sourceTree = "<group>"; };
+		CE4A729A1F7F541D007EE558 /* ReposViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReposViewController.swift; path = ui/ReposViewController.swift; sourceTree = "<group>"; };
+		CE4A729B1F7F541D007EE558 /* ReposViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReposViewModel.swift; path = ui/ReposViewModel.swift; sourceTree = "<group>"; };
 		CE6F5FF31F74FC6E00784E15 /* TODO */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TODO; sourceTree = "<group>"; };
-		CEF312961F7343FF00CC7206 /* GithubAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GithubAPIClient.swift; sourceTree = "<group>"; };
-		CEF3129A1F737B1B00CC7206 /* Repo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Repo.swift; sourceTree = "<group>"; };
 		CEF9FEA01F72B09400D629AB /* mvvm-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "mvvm-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEF9FEA31F72B09400D629AB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CEF9FEA51F72B09400D629AB /* ReposViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReposViewController.swift; sourceTree = "<group>"; };
 		CEF9FEA81F72B09400D629AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CEF9FEAA1F72B09400D629AB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CEF9FEAD1F72B09400D629AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -97,10 +99,11 @@
 		CEF3129C1F73805700CC7206 /* data */ = {
 			isa = PBXGroup;
 			children = (
-				CEF3129A1F737B1B00CC7206 /* Repo.swift */,
-				CEF312961F7343FF00CC7206 /* GithubAPIClient.swift */,
-				CE3B9BEB1F78CDC300D83FCB /* RealmHelper.swift */,
-				CE3B9BED1F78D38600D83FCB /* DataManager.swift */,
+				CE4A72901F7F53F5007EE558 /* DataManager.swift */,
+				CE4A72911F7F53F5007EE558 /* GithubAPIClient.swift */,
+				CE4A72921F7F53F5007EE558 /* JSONParser.swift */,
+				CE4A72931F7F53F5007EE558 /* RealmHelper.swift */,
+				CE4A72941F7F53F5007EE558 /* Repo.swift */,
 			);
 			name = data;
 			sourceTree = "<group>";
@@ -108,9 +111,9 @@
 		CEF3129F1F7380EB00CC7206 /* ui */ = {
 			isa = PBXGroup;
 			children = (
+				CE4A729A1F7F541D007EE558 /* ReposViewController.swift */,
+				CE4A729B1F7F541D007EE558 /* ReposViewModel.swift */,
 				CEF9FEA71F72B09400D629AB /* Main.storyboard */,
-				CEF9FEA51F72B09400D629AB /* ReposViewController.swift */,
-				CE6F5FF11F74E54800784E15 /* ReposViewModel.swift */,
 			);
 			name = ui;
 			sourceTree = "<group>";
@@ -327,13 +330,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CEF312971F7343FF00CC7206 /* GithubAPIClient.swift in Sources */,
-				CE3B9BEE1F78D38600D83FCB /* DataManager.swift in Sources */,
-				CE3B9BEC1F78CDC300D83FCB /* RealmHelper.swift in Sources */,
+				CE4A72991F7F53F5007EE558 /* Repo.swift in Sources */,
+				CE4A72961F7F53F5007EE558 /* GithubAPIClient.swift in Sources */,
+				CE4A72981F7F53F5007EE558 /* RealmHelper.swift in Sources */,
+				CE4A72971F7F53F5007EE558 /* JSONParser.swift in Sources */,
+				CE4A729C1F7F541D007EE558 /* ReposViewController.swift in Sources */,
+				CE4A729D1F7F541D007EE558 /* ReposViewModel.swift in Sources */,
 				CEF9FEB61F72B10E00D629AB /* README.md in Sources */,
-				CE6F5FF21F74E54800784E15 /* ReposViewModel.swift in Sources */,
-				CEF3129B1F737B1B00CC7206 /* Repo.swift in Sources */,
-				CEF9FEA61F72B09400D629AB /* ReposViewController.swift in Sources */,
+				CE4A72951F7F53F5007EE558 /* DataManager.swift in Sources */,
 				CEF9FEA41F72B09400D629AB /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
