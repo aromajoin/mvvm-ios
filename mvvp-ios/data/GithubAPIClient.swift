@@ -8,11 +8,12 @@
 
 import Foundation
 import Alamofire
-import SwiftyJSON
+
 class GithubAPIClient {
-  
   let API_HOST = "https://api.github.com/"
   let SEARCH_REPO_ENDPOINT = "search/repositories"
+  
+  let parser = JSONParser()
   
   private init(){}
   
@@ -34,41 +35,19 @@ class GithubAPIClient {
     Alamofire.request(urlStr, method: .get, parameters: parameters, encoding: URLEncoding.default, headers: nil)
       .responseJSON(completionHandler: {
         response in
+        // Guarantee that we get response with the HTTP status code 200.
         guard response.response?.statusCode == 200 else {
           error = "Failed to fetch data: \(String(describing: response.response?.statusCode))"
           callback(repos, error)
           return
         }
         
-        switch response.result {
-        case .success(let value):
-          let json = JSON(value)
-          guard let items = json["items"].array else {
-            print("Invalid JSON array")
-            return
-          }
-          
-          for item in items {
-            guard let id = item["id"].int32 else{
-              print("Failed to parse JSON")
-              return
-            }
-            guard let name = item["full_name"].string else {
-              print("Failed to parse JSON")
-              return
-            }
-            
-            let repo = Repo()
-            repo.id = id
-            repo.name = name
-            repos.append(repo)
-          }
-          
-          break
-        case .failure(let e):
-          error = e.localizedDescription
-          break
+        error = response.error?.localizedDescription
+        
+        if let data = response.data {
+          repos = self.parser.decode(from: data)
         }
+        
         callback(repos, error)
         
       })
