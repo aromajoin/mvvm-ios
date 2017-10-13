@@ -20,9 +20,6 @@ class ReposViewController: UIViewController {
   var disposeBag = DisposeBag()
   override func viewDidLoad() {
     super.viewDidLoad()
-    
-    tableView.dataSource = self
-    
     setupDataBinding()
   }
   
@@ -43,32 +40,18 @@ class ReposViewController: UIViewController {
         // Clear data
         self.repos.removeAll()
         self.tableView.reloadData()
-
+        
         // Load data from remote source
         self.viewModel.loadTrendingRepos(online: true)
       })
       .disposed(by: disposeBag)
     
-    viewModel.repos
-      .asObservable()
-      .subscribe(onNext: {
-        self.repos = $0
-        self.tableView.reloadData()
-      })
-      .disposed(by: disposeBag)
-  }
-}
-
-
-extension ReposViewController: UITableViewDataSource {
-  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return repos.count
+    viewModel.repos.asObservable()
+      .bind(to: tableView.rx.items(cellIdentifier: "repoViewCell"))(setupCell)
+      .addDisposableTo(disposeBag)
   }
   
-  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = UITableViewCell(style: .default, reuseIdentifier: "repoViewCell")
-    
-    cell.textLabel?.text = repos[indexPath.row].name
-    return cell
+  func setupCell(row: Int, element: Repo, cell: UITableViewCell){
+    cell.textLabel?.text = element.name
   }
 }
