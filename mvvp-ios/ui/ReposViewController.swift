@@ -14,6 +14,7 @@ class ReposViewController: UIViewController {
   @IBOutlet weak var requestCountLabel: UILabel!
   @IBOutlet weak var refreshButton: UIBarButtonItem!
   @IBOutlet weak var tableView: UITableView!
+  @IBOutlet weak var searchBar: UISearchBar!
   
   let viewModel = ReposViewModel()
   var repos: [Repo] = []
@@ -27,14 +28,16 @@ class ReposViewController: UIViewController {
     super.viewWillAppear(animated)
   }
   
-  // Setup data binding
+  // Setups data binding
   private func setupDataBinding() {
+    // Request count label
     viewModel.requestCount
       .asObservable()
       .map{"Data load time: \($0)"}
       .bind(to: requestCountLabel.rx.text)
       .addDisposableTo(disposeBag)
     
+    // Handle refresh button's click
     refreshButton.rx.tap.asObservable()
       .subscribe(onNext: {
         // Clear data
@@ -46,9 +49,18 @@ class ReposViewController: UIViewController {
       })
       .disposed(by: disposeBag)
     
+    // Bind data to table view
     viewModel.repos.asObservable()
       .bind(to: tableView.rx.items(cellIdentifier: "repoViewCell"))(setupCell)
       .addDisposableTo(disposeBag)
+    
+    // Handle search bar
+    searchBar.rx.text.asObservable()
+      .filter{$0 != nil}
+      .subscribe(onNext: {
+        text in
+          self.viewModel.filter(text: text!)
+      }).disposed(by: disposeBag)
   }
   
   func setupCell(row: Int, element: Repo, cell: UITableViewCell){
