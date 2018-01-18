@@ -174,8 +174,7 @@
 				CEF9FEAC1F72B09400D629AB /* LaunchScreen.storyboard */,
 				CEF9FEAF1F72B09400D629AB /* Info.plist */,
 			);
-			name = "mvvm-ios";
-			path = "mvvp-ios";
+			path = "mvvm-ios";
 			sourceTree = "<group>";
 		};
 		ED48B48C43E98F32EF213C40 /* Pods */ = {
@@ -229,7 +228,7 @@
 			dependencies = (
 			);
 			name = "mvvm-ios";
-			productName = "mvvp-ios";
+			productName = "mvvm-ios";
 			productReference = CEF9FEA01F72B09400D629AB /* mvvm-ios.app */;
 			productType = "com.apple.product-type.application";
 		};
@@ -251,7 +250,7 @@
 					};
 					CEF9FE9F1F72B09400D629AB = {
 						CreatedOnToolsVersion = 8.3.1;
-						DevelopmentTeam = U6G6XZT3DJ;
+						DevelopmentTeam = 4V6HDFWSR4;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -578,11 +577,11 @@
 			baseConfigurationReference = D122B3539CCD73E606DD7A63 /* Pods-mvvm-ios.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = U6G6XZT3DJ;
-				INFOPLIST_FILE = "mvvp-ios/Info.plist";
+				DEVELOPMENT_TEAM = 4V6HDFWSR4;
+				INFOPLIST_FILE = "mvvm-ios/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.aromajoin.mvvp-ios";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.aromajoin.mvv-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -593,11 +592,11 @@
 			baseConfigurationReference = F7FC9DB488917E205C4099EA /* Pods-mvvm-ios.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = U6G6XZT3DJ;
-				INFOPLIST_FILE = "mvvp-ios/Info.plist";
+				DEVELOPMENT_TEAM = 4V6HDFWSR4;
+				INFOPLIST_FILE = "mvvm-ios/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.aromajoin.mvvp-ios";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.aromajoin.mvvm-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
