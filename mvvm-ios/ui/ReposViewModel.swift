@@ -11,15 +11,16 @@ import RxSwift
 import RxCocoa
 
 class ReposViewModel {
-  let dataManager = DataManager.shared
+  let dataManager: DataManager
   var requestCount = BehaviorRelay<Int>(value: 0)
   var repos = BehaviorRelay<[Repository]>(value: [])
   var cachedRepos: [Repository] = []
   
   private let disposeBag = DisposeBag()
   
-  init() {
+  init(dataManager: DataManager) {
     // Load local data
+    self.dataManager = dataManager
     loadTrendingRepos(online: false)
   }
   

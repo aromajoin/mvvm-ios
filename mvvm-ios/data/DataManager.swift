@@ -10,12 +10,13 @@ import Foundation
 import RxSwift
 /// MARK: - A central place to manipulate data from both remote and local sources.
 class DataManager {
-  private let apiClient = GithubAPIClient.shared
-  private let realmHelper = RealmHelper.shared
+  private let apiClient: GithubAPIClient
+  private let realmHelper: RealmHelper
   
-  private init() {}
-  
-  public static let shared = DataManager()
+  init(apiClient: GithubAPIClient, realmHelper: RealmHelper) {
+    self.apiClient = apiClient
+    self.realmHelper = realmHelper
+  }
   
   public func loadRepos(online: Bool) -> Observable<[Repository]?> {
     if online {

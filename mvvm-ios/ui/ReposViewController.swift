@@ -16,11 +16,14 @@ class ReposViewController: UIViewController {
   @IBOutlet weak var tableView: UITableView!
   @IBOutlet weak var searchBar: UISearchBar!
   
-  let viewModel = ReposViewModel()
-  var repos: [Repo] = []
-  var disposeBag = DisposeBag()
+  private var viewModel: ReposViewModel!
+  private var repos: [Repo] = []
+  private var disposeBag = DisposeBag()
+    
   override func viewDidLoad() {
     super.viewDidLoad()
+    viewModel = ReposViewModel(dataManager: DataManager(apiClient: .init(api: WebService()),
+                                                        realmHelper: .shared))
     setupDataBinding()
   }
   

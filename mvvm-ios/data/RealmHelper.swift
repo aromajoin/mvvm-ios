@@ -9,12 +9,11 @@
 import Foundation
 import RealmSwift
 
-class RealmHelper{
+class RealmHelper {
+    
   let uiRealm = try! Realm()
-  
-  private init() {}
-  
   public static let shared = RealmHelper()
+  private init() {}
   
   public func loadRepos() -> [Repo]{
     return Array(uiRealm.objects(Repo.self))
