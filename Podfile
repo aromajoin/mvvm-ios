@@ -6,8 +6,6 @@ target 'mvvm-ios' do
   use_frameworks!
 
   # Pods for mvvm-ios
-  pod 'Alamofire'
-  pod 'SwiftyJSON'
   pod 'RxSwift'
   pod 'RxCocoa'
   pod 'RealmSwift'
@@ -18,8 +16,6 @@ target 'mvvm-ios-tests' do
   use_frameworks!
   
   # Pods for mvvm-ios
-  pod 'Alamofire'
-  pod 'SwiftyJSON'
   pod 'RxSwift'
   pod 'RxCocoa'
   pod 'RealmSwift'
