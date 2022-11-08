@@ -17,7 +17,7 @@ class ReposViewController: UIViewController {
   @IBOutlet weak var searchBar: UISearchBar!
   
   private var viewModel: ReposViewModel!
-  private var repos: [Repo] = []
+  private var repos: [RepositoryDBModel] = []
   private var disposeBag = DisposeBag()
     
   override func viewDidLoad() {

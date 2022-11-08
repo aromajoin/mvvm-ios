@@ -16,4 +16,11 @@ struct Repositories: Codable {
 struct Repository: Codable {
     let id: Int32
     let name: String
+    
+    func toRepositoryDBModel() -> RepositoryDBModel {
+        let model = RepositoryDBModel()
+        model.id = self.id
+        model.name = self.name
+        return model
+    }
 }

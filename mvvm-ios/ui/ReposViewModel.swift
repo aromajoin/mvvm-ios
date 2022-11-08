@@ -27,8 +27,10 @@ class ReposViewModel {
   func loadTrendingRepos(online: Bool) {
     requestCount.accept(requestCount.value + 1)
     dataManager.loadRepos(online: online)
+          .observe(on: MainScheduler.instance)
           .subscribe(onNext: { repositories in
             guard let repositories = repositories else { return }
+            self.dataManager.saveRepos(repositories: repositories)
             self.repos.accept(repositories)
             self.cachedRepos = repositories
           }).disposed(by: disposeBag)

@@ -33,6 +33,13 @@ class DataManager {
       return Observable
             .just(repos.map({ $0.toRepository() }))
             .asObservable()
+      }
+   }
+    
+    public func saveRepos(repositories: [Repository]) {
+        repositories.forEach { repo in
+            realmHelper.addNewRepo(repo: repo.toRepositoryDBModel())
         }
+        
     }
 }

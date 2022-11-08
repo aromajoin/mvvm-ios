@@ -161,14 +161,14 @@
 			name = data;
 			sourceTree = "<group>";
 		};
-		CEF3129F1F7380EB00CC7206 /* ui */ = {
+		CEF3129F1F7380EB00CC7206 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
 				CE4A729A1F7F541D007EE558 /* ReposViewController.swift */,
 				CE4A729B1F7F541D007EE558 /* ReposViewModel.swift */,
 				CEF9FEA71F72B09400D629AB /* Main.storyboard */,
 			);
-			name = ui;
+			name = Scenes;
 			sourceTree = "<group>";
 		};
 		CEF9FE971F72B09400D629AB = {
@@ -198,10 +198,10 @@
 		CEF9FEA21F72B09400D629AB /* mvvm-ios */ = {
 			isa = PBXGroup;
 			children = (
+				CEF3129F1F7380EB00CC7206 /* Scenes */,
+				CEF3129C1F73805700CC7206 /* data */,
 				030F6F05291A253B0025AA44 /* Models */,
 				030F6F03291A23260025AA44 /* Infrastructure */,
-				CEF3129C1F73805700CC7206 /* data */,
-				CEF3129F1F7380EB00CC7206 /* ui */,
 				CEF9FEA31F72B09400D629AB /* AppDelegate.swift */,
 				CEF9FEAA1F72B09400D629AB /* Assets.xcassets */,
 				CEF9FEAC1F72B09400D629AB /* LaunchScreen.storyboard */,

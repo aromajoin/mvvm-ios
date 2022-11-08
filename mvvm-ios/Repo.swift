@@ -9,15 +9,15 @@
 import Foundation
 import RealmSwift
 
-class Repo: Object {
+class RepositoryDBModel: Object {
     @objc dynamic var id: Int32 = -1
     @objc dynamic var name: String = ""
     
     override func isEqual(_ object: Any?) -> Bool {
-        guard object is Repo else {
+        guard object is RepositoryDBModel else {
             return false
         }
-        let repo = object as! Repo
+        let repo = object as! RepositoryDBModel
         
         return repo.id == self.id && repo.name == self.name
     }
