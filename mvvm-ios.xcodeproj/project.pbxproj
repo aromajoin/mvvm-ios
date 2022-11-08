@@ -18,7 +18,6 @@
 		CE3B9BF01F78DE3300D83FCB /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = CE3B9BEF1F78DE3300D83FCB /* LICENSE */; };
 		CE4A72951F7F53F5007EE558 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4A72901F7F53F5007EE558 /* DataManager.swift */; };
 		CE4A72961F7F53F5007EE558 /* GithubAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4A72911F7F53F5007EE558 /* GithubAPIClient.swift */; };
-		CE4A72971F7F53F5007EE558 /* JSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4A72921F7F53F5007EE558 /* JSONParser.swift */; };
 		CE4A72981F7F53F5007EE558 /* RealmHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4A72931F7F53F5007EE558 /* RealmHelper.swift */; };
 		CE4A729C1F7F541D007EE558 /* ReposViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4A729A1F7F541D007EE558 /* ReposViewController.swift */; };
 		CE4A729D1F7F541D007EE558 /* ReposViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4A729B1F7F541D007EE558 /* ReposViewModel.swift */; };
@@ -62,7 +61,6 @@
 		CE4A72861F7F5163007EE558 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE4A72901F7F53F5007EE558 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataManager.swift; path = data/DataManager.swift; sourceTree = "<group>"; };
 		CE4A72911F7F53F5007EE558 /* GithubAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GithubAPIClient.swift; path = data/GithubAPIClient.swift; sourceTree = "<group>"; };
-		CE4A72921F7F53F5007EE558 /* JSONParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JSONParser.swift; path = data/JSONParser.swift; sourceTree = "<group>"; };
 		CE4A72931F7F53F5007EE558 /* RealmHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RealmHelper.swift; path = data/RealmHelper.swift; sourceTree = "<group>"; };
 		CE4A729A1F7F541D007EE558 /* ReposViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReposViewController.swift; path = ui/ReposViewController.swift; sourceTree = "<group>"; };
 		CE4A729B1F7F541D007EE558 /* ReposViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReposViewModel.swift; path = ui/ReposViewModel.swift; sourceTree = "<group>"; };
@@ -164,7 +162,6 @@
 			children = (
 				CE4A72901F7F53F5007EE558 /* DataManager.swift */,
 				CE4A72911F7F53F5007EE558 /* GithubAPIClient.swift */,
-				CE4A72921F7F53F5007EE558 /* JSONParser.swift */,
 				CE4A72931F7F53F5007EE558 /* RealmHelper.swift */,
 			);
 			name = data;
@@ -453,7 +450,6 @@
 			files = (
 				CE4A72961F7F53F5007EE558 /* GithubAPIClient.swift in Sources */,
 				CE4A72981F7F53F5007EE558 /* RealmHelper.swift in Sources */,
-				CE4A72971F7F53F5007EE558 /* JSONParser.swift in Sources */,
 				030F6F10291A267C0025AA44 /* Endpoint.swift in Sources */,
 				030F6F0B291A26680025AA44 /* Resource.swift in Sources */,
 				CE4A729C1F7F541D007EE558 /* ReposViewController.swift in Sources */,

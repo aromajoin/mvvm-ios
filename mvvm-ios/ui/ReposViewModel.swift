@@ -13,8 +13,11 @@ import RxCocoa
 class ReposViewModel {
   let dataManager = DataManager.shared
   var requestCount = BehaviorRelay<Int>(value: 0)
-  var repos = BehaviorRelay<[Repo]>(value: [])
-  var cachedRepos: [Repo] = []
+  var repos = BehaviorRelay<[Repository]>(value: [])
+  var cachedRepos: [Repository] = []
+  
+  private let disposeBag = DisposeBag()
+  
   init() {
     // Load local data
     loadTrendingRepos(online: false)
@@ -22,19 +25,19 @@ class ReposViewModel {
   
   func loadTrendingRepos(online: Bool) {
     requestCount.accept(requestCount.value + 1)
-    
-    self.dataManager.loadRepos(online: online, completion: {
-      result in
-      self.repos.accept(result)
-      self.cachedRepos = result
-    })
+    dataManager.loadRepos(online: online)
+          .subscribe(onNext: { repositories in
+            guard let repositories = repositories else { return }
+            self.repos.accept(repositories)
+            self.cachedRepos = repositories
+          }).disposed(by: disposeBag)
   }
   
   func filter(text: String) {
     if (text.count == 0) {
       repos.accept(cachedRepos)
     } else {
-      let filteredRepos = cachedRepos.filter{$0.name.lowercased().contains(text.lowercased())}
+      let filteredRepos = cachedRepos.filter{ $0.name.lowercased().contains(text.lowercased()) }
       repos.accept(filteredRepos)
     }
   }

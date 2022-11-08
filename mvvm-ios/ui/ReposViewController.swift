@@ -75,7 +75,7 @@ class ReposViewController: UIViewController {
       }).disposed(by: disposeBag)
   }
   
-  private func setupCell(row: Int, element: Repo, cell: UITableViewCell){
+  private func setupCell(row: Int, element: Repository, cell: UITableViewCell){
     cell.textLabel?.text = element.name
   }
 }
