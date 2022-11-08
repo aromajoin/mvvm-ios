@@ -44,7 +44,7 @@ class ReposViewController: UIViewController {
       .asObservable()
       .map{"Data load time: \($0)"}
       .bind(to: requestCountLabel.rx.text)
-      .addDisposableTo(disposeBag)
+      .disposed(by: disposeBag)
   }
   
   private func bindRefreshButton() {
@@ -63,7 +63,7 @@ class ReposViewController: UIViewController {
   private func bindTableView() {
     viewModel.repos.asObservable()
       .bind(to: tableView.rx.items(cellIdentifier: "repoViewCell"))(setupCell)
-      .addDisposableTo(disposeBag)
+      .disposed(by: disposeBag)
   }
   
   private func bindSearchBar() {
