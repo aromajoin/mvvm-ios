@@ -9,18 +9,17 @@
 import Foundation
 import RealmSwift
 
-class RealmHelper{
+class RealmHelper {
+    
   let uiRealm = try! Realm()
-  
+  public static let shared = RealmHelper()
   private init() {}
   
-  public static let shared = RealmHelper()
-  
-  public func loadRepos() -> [Repo]{
-    return Array(uiRealm.objects(Repo.self))
+  public func loadRepos() -> [RepositoryDBModel]{
+    return Array(uiRealm.objects(RepositoryDBModel.self))
   }
   
-  public func addNewRepo(repo: Repo) {
+  public func addNewRepo(repo: RepositoryDBModel) {
     try! uiRealm.write {
       uiRealm.add(repo)
     }
@@ -28,7 +27,7 @@ class RealmHelper{
   
   public func clearAllRepos() {
     try! uiRealm.write {
-      uiRealm.delete(uiRealm.objects(Repo.self))
+      uiRealm.delete(uiRealm.objects(RepositoryDBModel.self))
     }
   }
 }

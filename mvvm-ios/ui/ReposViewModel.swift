@@ -8,32 +8,40 @@
 
 import Foundation
 import RxSwift
+import RxCocoa
 
 class ReposViewModel {
-  let dataManager = DataManager.shared
-  var requestCount = Variable<Int>(0)
-  var repos = Variable<[Repo]>([])
-  var cachedRepos: [Repo] = []
-  init() {
+  let dataManager: DataManager
+  var requestCount = BehaviorRelay<Int>(value: 0)
+  var repos = BehaviorRelay<[Repository]>(value: [])
+  var cachedRepos: [Repository] = []
+  
+  private let disposeBag = DisposeBag()
+  
+  init(dataManager: DataManager) {
     // Load local data
+    self.dataManager = dataManager
     loadTrendingRepos(online: false)
   }
   
   func loadTrendingRepos(online: Bool) {
-    requestCount.value += 1
-    
-    self.dataManager.loadRepos(online: online, completion: {
-      result in
-      self.repos.value = result
-      self.cachedRepos = result
-    })
+    requestCount.accept(requestCount.value + 1)
+    dataManager.loadRepos(online: online)
+          .observe(on: MainScheduler.instance)
+          .subscribe(onNext: { repositories in
+            guard let repositories = repositories else { return }
+            self.dataManager.saveRepos(repositories: repositories)
+            self.repos.accept(repositories)
+            self.cachedRepos = repositories
+          }).disposed(by: disposeBag)
   }
   
   func filter(text: String) {
     if (text.count == 0) {
-      repos.value = cachedRepos
+      repos.accept(cachedRepos)
     } else {
-      repos.value = cachedRepos.filter{$0.name.lowercased().contains(text.lowercased())}
+      let filteredRepos = cachedRepos.filter{ $0.name.lowercased().contains(text.lowercased()) }
+      repos.accept(filteredRepos)
     }
   }
 }

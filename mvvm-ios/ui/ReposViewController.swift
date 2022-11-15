@@ -16,11 +16,14 @@ class ReposViewController: UIViewController {
   @IBOutlet weak var tableView: UITableView!
   @IBOutlet weak var searchBar: UISearchBar!
   
-  let viewModel = ReposViewModel()
-  var repos: [Repo] = []
-  var disposeBag = DisposeBag()
+  private var viewModel: ReposViewModel!
+  private var repos: [RepositoryDBModel] = []
+  private var disposeBag = DisposeBag()
+    
   override func viewDidLoad() {
     super.viewDidLoad()
+    viewModel = ReposViewModel(dataManager: DataManager(apiClient: .init(api: WebService()),
+                                                        realmHelper: .shared))
     setupDataBinding()
   }
   
@@ -44,7 +47,7 @@ class ReposViewController: UIViewController {
       .asObservable()
       .map{"Data load time: \($0)"}
       .bind(to: requestCountLabel.rx.text)
-      .addDisposableTo(disposeBag)
+      .disposed(by: disposeBag)
   }
   
   private func bindRefreshButton() {
@@ -63,7 +66,7 @@ class ReposViewController: UIViewController {
   private func bindTableView() {
     viewModel.repos.asObservable()
       .bind(to: tableView.rx.items(cellIdentifier: "repoViewCell"))(setupCell)
-      .addDisposableTo(disposeBag)
+      .disposed(by: disposeBag)
   }
   
   private func bindSearchBar() {
@@ -75,7 +78,7 @@ class ReposViewController: UIViewController {
       }).disposed(by: disposeBag)
   }
   
-  private func setupCell(row: Int, element: Repo, cell: UITableViewCell){
+  private func setupCell(row: Int, element: Repository, cell: UITableViewCell){
     cell.textLabel?.text = element.name
   }
 }

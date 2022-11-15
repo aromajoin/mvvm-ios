@@ -7,45 +7,39 @@
 //
 
 import Foundation
-
+import RxSwift
 /// MARK: - A central place to manipulate data from both remote and local sources.
 class DataManager {
-  private let apiClient = GithubAPIClient.shared
-  private let realmHelper = RealmHelper.shared
+  private let apiClient: GithubAPIClient
+  private let realmHelper: RealmHelper
   
-  private init() {}
+  init(apiClient: GithubAPIClient, realmHelper: RealmHelper) {
+    self.apiClient = apiClient
+    self.realmHelper = realmHelper
+  }
   
-  public static let shared = DataManager()
-  
-  public func loadRepos(online: Bool, completion callback: @escaping ((_ repos: [Repo]) -> Void)) {
+  public func loadRepos(online: Bool) -> Observable<[Repository]?> {
     if online {
-      // Force to load remote data source.
-      apiClient.fetchTrendingRepos(completion: {
-        repos, error in
-        guard error == nil else {
-          print("Get error when fetching repos: \(String(describing: error))")
-          return
-        }
-        
-        // Clear old data and save new data into realm database.
-        self.realmHelper.clearAllRepos()
-        for repo in repos {
-          self.realmHelper.addNewRepo(repo: repo)
-        }
-        
-        callback(repos)
-      })
+      return apiClient.fetchTrendingRepos()
+            .map({ $0?.items })
+            .asObservable()
     } else {
       // Load local data
-      
       let repos = realmHelper.loadRepos()
       
       if repos.count == 0 {
-        // No local data available. Need to load from remote source.
-        loadRepos(online: true, completion: callback)
-      } else {
-        callback(realmHelper.loadRepos())
+          return Observable.just([]).asObservable()
       }
+      return Observable
+            .just(repos.map({ $0.toRepository() }))
+            .asObservable()
+      }
+   }
+    
+    public func saveRepos(repositories: [Repository]) {
+        repositories.forEach { repo in
+            realmHelper.addNewRepo(repo: repo.toRepositoryDBModel())
+        }
+        
     }
-  }
 }
